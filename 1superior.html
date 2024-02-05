@@ -1,0 +1,45 @@
+
+//guardar en un objeto json los datos de un alumno de 1 de ciclo superior  luego visualizarlo mediante javascript
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizar Datos de Alumnos</title>
+</head>
+<body>
+
+<script>
+  var alumno1 = {
+    nombre: "Farragatao",
+    edad: 18,
+    curso: "1º Ciclo Superior",
+  };
+
+  var alumno2 = {
+    nombre: "Juan",
+    edad: 19,
+    curso: "1º Ciclo Superior",
+  };
+
+  var alumnos = [alumno1, alumno2];
+
+  var alumnosJSON = JSON.stringify(alumnos);
+
+  localStorage.setItem("alumnosData", alumnosJSON);
+
+  var alumnosRecuperadosJSON = localStorage.getItem("alumnosData");
+  var alumnosRecuperados = JSON.parse(alumnosRecuperadosJSON);
+
+  document.write("<h2>Información de los Alumnos</h2>");
+  for (var i = 0; i < alumnosRecuperados.length; i++) {
+    document.write("<p><strong>Nombre del Alumno " + (i + 1) + ":</strong> " + alumnosRecuperados[i].nombre + "</p>");
+    document.write("<p><strong>Edad del Alumno " + (i + 1) + ":</strong> " + alumnosRecuperados[i].edad + "</p>");
+    document.write("<p><strong>Curso del Alumno " + (i + 1) + ":</strong> " + alumnosRecuperados[i].curso + "</p>");
+    document.write("<hr>");
+  }
+</script>
+
+</body>
+</html>

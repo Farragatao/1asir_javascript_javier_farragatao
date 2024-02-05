@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Proceso(tab_sueldos) {
+            suma = 0;
+            // Comenzamos desde 1 para evitar sumar el nombre en tab_sueldos
+            for (let i = 1; i < tab_sueldos.length; i++) {
+                suma += parseFloat(tab_sueldos[i]);
+            }
+            media = suma / (tab_sueldos.length - 1);
+            return media;
+        }
+
+        function Visualizar(media, nombre) {
+            alert("La media de " + nombre + " es: " + media);
+        }
+
+        // Guardamos el nombre y sueldo en variables separadas
+        let nombre = "Luis";
+        let sueldos = [1000, 2500, 800, 3000];
+        
+        resul = Proceso(sueldos);
+        Visualizar(resul, nombre);
+    </script>
+</body>
+</html>

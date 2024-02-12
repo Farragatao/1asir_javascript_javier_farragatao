@@ -1,0 +1,36 @@
+// almacenamos en un array las notas y los nombres de varios alumnos, se pide los nombres de los alumnos sin ningun suspenso
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumnos sin suspensos</title>
+</head>
+<body>
+    <h1>Alumnos sin suspensos</h1>
+
+    <script>
+        var alumnos = [
+            { nombre: "Juan", nota: 7 },
+            { nombre: "María", nota: 5 },
+            { nombre: "Pedro", nota: 8 },
+            { nombre: "Ana", nota: 6 },
+            { nombre: "Luis", nota: 4 }
+        ];
+
+        function sinSuspensos(alumno) {
+            return alumno.nota >= 5;
+        }
+
+        const alumnosSinSuspensos = alumnos.filter(sinSuspensos);
+
+        const nombresSinSuspensos = alumnosSinSuspensos.map(alumno => alumno.nombre);
+
+        const resultadoElement = document.createElement('p');
+        resultadoElement.textContent = "Alumnos sin suspensos: " + nombresSinSuspensos.join(", ");
+
+        document.body.appendChild(resultadoElement);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+//poner en el body todo lo que tenga que ver con el usuario
+
+pedir clave 
+boton de la clave
+pedir numero
+boton numero
+ 
+y aqui cerrar el body//
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="pedir clave">
+    <title>clave</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#boton_comprobarlo").hide();
+        $("#texto_numero").hide();
+      });
+
+    </script>
+
+        </head>
+            <body>
+                <h1>Adivina la clave</h1>
+                <form id="forml">
+                <span id="texto_clave_secreta">Clave secreta: <input
+                type="password" name="clave" id="clave" value=""></span>
+
+                <input type="button" id="continuar" value="Continuar">
+                <span id="texto_numero"><br> <br>Numero: <input type="number"name="numero" 
+                id="numero" value=""></span>
+
+                <input type="button" id="boton_comprobarlo"
+                value="Pulsa para comprobarlo">
+
+                </form>
+            </body>

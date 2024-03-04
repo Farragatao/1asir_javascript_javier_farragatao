@@ -1,0 +1,33 @@
+// declarar un array con valores numericos que calcule le mayor de todos//
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcular el Mayor de un Array</title>
+</head>
+<body>
+
+<h1>Calcular el Mayor de un Array</h1>
+
+<script>
+    var numeros = [25, 10, 47, 18, 36, 52, 62];
+    
+    var mayor = numeros[0];
+    
+    for (var i = 1; i < numeros.length; i++) {
+        switch (true) {
+            case numeros[i] > mayor:
+                mayor = numeros[i];
+                break;
+            default:
+                break;
+        }
+    }
+    
+    document.write("<p>El mayor número del array es: " + mayor + "</p>");
+</script>
+
+</body>
+</html>

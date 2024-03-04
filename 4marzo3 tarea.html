@@ -1,0 +1,38 @@
+//declarar un array con valores numericos y que diga si esos valores numericos estan ordenados o no//
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orden de Array</title>
+<script>
+  function verificarOrden() {
+    var arrayNumerico = [1, 2, 3, 4, 5]; // Puedes modificar este array como desees
+    var ordenado = true;
+
+    for (var i = 0; i < arrayNumerico.length - 1; i++) {
+      switch (true) {
+        case arrayNumerico[i] > arrayNumerico[i + 1]:
+          ordenado = false;
+          break;
+      }
+    }
+
+    if (ordenado) {
+      document.getElementById("resultado").innerText = "El array está ordenado.";
+    } else {
+      document.getElementById("resultado").innerText = "El array no está ordenado.";
+    }
+  }
+</script>
+</head>
+<body>
+
+<h2>Verificar Orden de Array</h2>
+
+<button onclick="verificarOrden()">Verificar</button>
+<p id="resultado"></p>
+
+</body>
+</html>

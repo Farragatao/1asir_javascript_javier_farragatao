@@ -1,0 +1,62 @@
+//declarar un array con valores numericos y tiene que trasladar todos las valores a un lugar a la izquierda, excepto el primero que pasa a la ultima posicion //
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traslado de valores a la izquierda en una tabla</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 200px;
+    }
+
+    th, td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 8px;
+    }
+</style>
+<script>
+    window.onload = function() {
+        function trasladarIzquierda(array) {
+            let primerElemento = array.shift(); 
+            array.push(primerElemento); 
+            return array;
+        }
+
+        let numeros = [1, 2, 3, 4, 5];
+
+        trasladarIzquierda(numeros);
+
+        function actualizarTabla() {
+            let tabla = document.getElementById("tabla-numeros");
+            for (let i = 0; i < numeros.length; i++) {
+                tabla.rows[0].cells[i].innerHTML = numeros[i];
+            }
+        }
+
+        actualizarTabla();
+    }
+</script>
+</head>
+<body>
+    <table id="tabla-numeros">
+        <tr>
+            <th>Valor</th>
+            <th>Valor</th>
+            <th>Valor</th>
+            <th>Valor</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

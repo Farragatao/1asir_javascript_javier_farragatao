@@ -1,0 +1,104 @@
+//declaramos un array con valores numericos y se pide por teclado un valor numerico y a continuacion visualizar si se encuentra en el array o no//
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Búsqueda en Array</title>
+</head>
+<body>
+
+<h2>Buscar en Array</h2>
+
+<p>Introduce un valor numérico para buscar en el array:</p>
+<input type="number" id="valorBusqueda">
+<button onclick="buscar()">Buscar</button>
+
+<p id="resultado"></p>
+
+<script>
+function buscar() {
+    var valores = [10, 20, 30, 40, 50]; 
+    var valorBuscado = parseInt(document.getElementById("valorBusqueda").value); 
+    var encontrado = false;
+
+    switch (valorBuscado) {
+        case valores[0]:
+        case valores[1]:
+        case valores[2]:
+        case valores[3]:
+        case valores[4]:
+            encontrado = true;
+            break;
+        default:
+            encontrado = false;
+    }
+
+    if (encontrado) {
+        document.getElementById("resultado").innerText = "El valor " + valorBuscado + " se encuentra en el array.";
+    } else {
+        document.getElementById("resultado").innerText = "El valor " + valorBuscado + " no se encuentra en el array.";
+    }
+}
+
+
+
+function buscar() {
+    var valores = [10, 20, 30, 40, 50]; 
+    var valorBuscado = parseInt(document.getElementById("valorBusqueda").value); 
+    var encontrado = false;
+
+    switch (valorBuscado) {
+        case valores[0]:
+        case valores[1]:
+        case valores[2]:
+        case valores[3]:
+        case valores[4]:
+            encontrado = true;
+            break;
+        default:
+            encontrado = false;
+    }
+
+    if (encontrado) {
+        document.getElementById("resultado").innerText = "El valor " + valorBuscado + " se encuentra en el array.";
+    } else {
+        document.getElementById("resultado").innerText = "El valor " + valorBuscado + " no se encuentra en el array.";
+    }
+}
+
+
+
+
+function buscar() {
+    var valores = [10, 20, 30, 40, 50]; 
+    var valorBuscado = parseInt(document.getElementById("valorBusqueda").value); 
+    var encontrado = false;
+
+    switch (valorBuscado) {
+        case valores[0]:
+        case valores[1]:
+        case valores[2]:
+        case valores[3]:
+        case valores[4]:
+            encontrado = true;
+            break;
+        default:
+            encontrado = false;
+    }
+
+    if (encontrado) {
+        document.getElementById("resultado").innerText = "El valor " + valorBuscado + " se encuentra en el array.";
+    } else {
+        document.getElementById("resultado").innerText = "El valor " + valorBuscado + " no se encuentra en el array.";
+    }
+}
+
+
+
+
+</script>
+
+</body>
+</html>

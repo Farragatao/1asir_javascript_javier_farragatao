@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas de alumnos</title>
+    <script>
+        
+
+
+
+
+        var alumnos = [
+            {
+                "nombre": "Luis Ortiz",
+                "notas": [6, 4, 7, 6, 7]
+            },
+            {
+                "nombre": "Ana Torres",
+                "notas": [7, 5, 5, 8, 9]
+            },
+            {
+                "nombre": "Roberto Martinez",
+                "notas": [3, 2, 4, 4, 6]
+            },
+            {
+                "nombre": "Laura Moreno",
+                "notas": [5, 4, 3, 4, 8]
+            }
+        ];
+
+      
+      
+      
+      
+      
+
+        
+      
+      
+      
+        function calcularMedia(notas) {
+            var suma = notas.reduce((a, b) => a + b, 0);
+            return suma / notas.length;
+        }
+
+        function visualizarSuspensos() {
+            var suspensos = alumnos.filter(alumno => calcularMedia(alumno.notas) < 5);
+            var resultados = document.getElementById("resultadosA");
+            resultados.innerHTML = "<h2>Alumnos con nota media suspensa:</h2>";
+            suspensos.forEach(alumno => {
+                resultados.innerHTML += "<p>Nombre: " + alumno.nombre + ", Nota media: " + calcularMedia(alumno.notas) + "</p>";
+            });
+        }
+
+        function suspensosMasDeDos() {
+            var masDeDosSuspensos = alumnos.filter(alumno => {
+                var suspensos = 0;
+                alumno.notas.forEach(nota => {
+                    if (nota < 5) {
+                        suspensos++;
+                    }
+                });
+                return suspensos > 2;
+            });
+
+            var lista = document.getElementById("listaSuspensos");
+            lista.innerHTML = "<h2>Alumnos con más de dos suspensos:</h2>";
+            masDeDosSuspensos.forEach(alumno => {
+                lista.innerHTML += "<li>" + alumno.nombre + "</li>";
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="visualizarSuspensos()">Mostrar Suspensos</button>
+    <button onclick="suspensosMasDeDos()">Mostrar Más de Dos Suspensos</button>
+    <div id="resultadosA"></div>
+    <ul id="listaSuspensos"></ul>
+</body>
+</html>

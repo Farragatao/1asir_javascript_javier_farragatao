@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empleado con el Sueldo Más Alto</title>
+</head>
+<body>
+
+<h2>Empleado con el Sueldo Más Alto</h2>
+
+<script>
+
+
+
+var nombresEmpleados = ["Juan", "María", "Pedro", "Luis"];
+    var sueldos = [2000, 2500, 1800, 3000];
+
+    var indiceSueldoMaximo = sueldos.indexOf(Math.max(...sueldos));
+
+    document.write("<p>El empleado que gana más dinero es " + nombresEmpleados[indiceSueldoMaximo] + " con un sueldo de €" + sueldos[indiceSueldoMaximo] + "</p>");
+</script>
+
+</body>
+</html>
+
+
+

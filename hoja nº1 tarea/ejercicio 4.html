@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresión Matemática</title>
+</head>
+<body>
+
+    <h1>Resultado de la Expresión Matemática</h1>
+
+    <script>
+        var z = 3;
+        var x = 4;
+        var r = 5;
+
+        var resultado = 5 * ((x % 3) * (6 + (z + 3) / (r - 3)));
+
+        console.log("Resultado:", resultado);
+
+        var resultadoElemento = document.createElement("p");
+        resultadoElemento.textContent = "El resultado es: " + resultado;
+
+        document.body.appendChild(resultadoElemento);
+    </script>
+
+</body>
+</html>

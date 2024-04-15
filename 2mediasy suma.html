@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Functions</h1>
+
+
+<p id="media1"></p>
+<p id="media2"></p>
+<p id="suma"></p>
+<script>
+function Media(p1, p2) {
+   return (p1+p2)/2;
+}
+let num1=10;
+let num2=12;
+
+document.getElementById("media1").innerHTML = Media(num1,num2);
+let num3=8;
+let num4=8;
+document.getElementById("media2").innerHTML = Media(num3,num4);
+
+let result =Media(num1,num2)+Media (num3, num4);
+document.getElementById("suma").innerHTML = result;
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+elegir tres numeros (num1,num2,num3) con los valores que quiera, calcular mediante javascrpit la media de los tres numeros,
+
+se declaran dos valores (num1,num2) y se calcula media, a continuacion se declaran otros dos(num3,num4) y se calcula la media, finalmente hacer la suma de ambas medias, en javascript
+
+visualizar mediante una funcion  de javascript ambos datos seguidos= hola jose dominguez
+
+ se declaaran dos notas nota1 y nota2, obtener la media y ahora visualizar aprobados o suspensos si la media es mayor que 5 o  no

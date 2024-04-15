@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valores Comprendidos</title>
+</head>
+<body>
+
+<script>
+  // a) Utilizando la estructura de control repetir variando
+  document.write("<p><b>a) Utilizando la estructura de control repetir variando:</b></p>");
+  let num1 = parseInt(prompt("Introduce el primer número:"));
+  let num2 = parseInt(prompt("Introduce el segundo número:"));
+
+  for (let i = num1; i <= num2; i++) {
+    document.write(i + " ");
+  }
+
+  // b) Utilizando la estructura de control repetir mientras (condición al principio) while
+  document.write("<p><b>b) Utilizando la estructura de control repetir mientras (condición al principio):</b></p>");
+  let startNum = parseInt(prompt("Introduce el primer número:"));
+  let endNum = parseInt(prompt("Introduce el segundo número:"));
+
+  let currentNum = startNum;
+  while (currentNum <= endNum) {
+    document.write(currentNum + " ");
+    currentNum++;
+  }
+
+  // c) Utilizando la estructura de control repetir mientras (condición al final) do while
+  document.write("<p><b>c) Utilizando la estructura de control repetir mientras (condición al final):</b></p>");
+  let startValue = parseInt(prompt("Introduce el primer número:"));
+  let endValue = parseInt(prompt("Introduce el segundo número:"));
+
+  let currentValue = startValue;
+  do {
+    document.write(currentValue + " ");
+    currentValue++;
+  } while (currentValue <= endValue);
+</script>
+
+</body>
+</html>

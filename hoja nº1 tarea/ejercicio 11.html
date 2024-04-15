@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparación de Medias</title>
+</head>
+<body>
+
+<script>
+  // Solicitar al usuario los cuatro valores
+  let num1 = parseFloat(prompt("Introduce el primer número:"));
+  let num2 = parseFloat(prompt("Introduce el segundo número:"));
+  let num3 = parseFloat(prompt("Introduce el tercer número:"));
+  let num4 = parseFloat(prompt("Introduce el cuarto número:"));
+
+  // Calcular las medias
+  let media1 = (num1 + num2) / 2;
+  let media2 = (num3 + num4) / 2;
+
+  // Comparar y visualizar la media mayor
+  document.write("<p><b>Media formada por num1 y num2:</b> " + media1 + "</p>");
+  document.write("<p><b>Media formada por num3 y num4:</b> " + media2 + "</p>");
+
+  if (media1 > media2) {
+    document.write("<p><b>La media formada por num1 y num2 es mayor.</b></p>");
+  } else if (media1 < media2) {
+    document.write("<p><b>La media formada por num3 y num4 es mayor.</b></p>");
+  } else {
+    document.write("<p><b>Ambas medias son iguales.</b></p>");
+  }
+</script>
+
+</body>
+</html>

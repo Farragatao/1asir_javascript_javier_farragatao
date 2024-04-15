@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Notas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Calculadora de Notas</h2>
+  
+  <label for="nota1">Nota del Primer Trimestre:</label>
+  <input type="number" id="nota1" min="0" max="10" step="0.1"><br><br>
+
+  <label for="nota2">Nota del Segundo Trimestre:</label>
+  <input type="number" id="nota2" min="0" max="10" step="0.1"><br><br>
+
+  <label for="nota3">Nota del Tercer Trimestre:</label>
+  <input type="number" id="nota3" min="0" max="10" step="0.1"><br><br>
+
+  <button onclick="calcularNota()">Calcular Nota</button><br><br>
+
+  <div id="resultado"></div>
+
+  <script>
+    function calcularNota() {
+      var nota1 = parseFloat(document.getElementById('nota1').value);
+      var nota2 = parseFloat(document.getElementById('nota2').value);
+      var nota3 = parseFloat(document.getElementById('nota3').value);
+
+      var notaMedia = (nota1 + nota2 + nota3) / 3;
+
+      var mensaje = "Tu nota ordinaria es: " + notaMedia.toFixed(2) + "<br>";
+
+      if (notaMedia >= 5) {
+        mensaje += "¡Felicidades! Has aprobado la asignatura.";
+      } else {
+        mensaje += "Lo siento, has reprobado la asignatura.";
+      }
+
+      document.getElementById('resultado').innerHTML = mensaje;
+    }
+  </script>
+</body>
+</html>

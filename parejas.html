@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juego de Parejas</title>
+<style>
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+    td {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        background: #dddddd;
+        text-align: center;
+        cursor: pointer;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .rojo {
+        background: red;
+    }
+</style>
+</head>
+<body>
+
+<h1 style="text-align: center; color: #993300;">JUEGO DE PAREJAS</h1>
+
+<table id="tablaId"></table>
+
+<script>
+const imagenes = [
+    ["manzana.jpeg", "pera.jpeg", "platano.jpeg", "uvas.jpeg"],
+    ["fresa.jpeg", "pinna.jpeg", "kiwi.jpeg", "naranja.jpeg"],
+    ["kiwi.jpeg", "uvas.jpeg", "fresa.jpeg", "manzana.jpeg"],
+    ["platano.jpeg", "naranja.jpeg", "pinna.jpeg", "pera.jpeg"]
+];
+let sw = false;
+let numero_veces = 0;
+let anterior;
+let id_anterior;
+
+function generarTabla() {
+    const tabla = document.getElementById("tablaId");
+    for (let i = 0; i < imagenes.length; i++) {
+        let fila = document.createElement("tr");
+        for (let j = 0; j < imagenes[i].length; j++) {
+            let columna = document.createElement("td");
+            columna.setAttribute("id", "col" + (i + 1) + (j + 1));
+            columna.addEventListener("click", function() {
+                Pulsado(this);
+            });
+            fila.appendChild(columna);
+        }
+        tabla.appendChild(fila);
+    }
+}
+
+function Visualizar_dato_de_matriz(id, fila, columna) {
+    let imagen = document.createElement("img");
+    imagen.setAttribute("src", 'imagenes/' + imagenes[fila-1][columna-1]);
+    document.getElementById(id).innerHTML = '';
+    document.getElementById(id).appendChild(imagen);
+    setTimeout(function(){
+        document.getElementById(id).innerHTML = '';
+    }, 500);
+}
+
+function Pulsado(elemento) {
+    if (Comprobar_lleno() === "si") {
+        alert("LO HAS CONSEGUIDO en " + numero_veces + " veces");
+    } else {
+        numero_veces++;
+        let id = elemento.id;
+        let fila = parseInt(id.substring(3, 4));
+        let columna = parseInt(id.substring(4, 5));
+
+        Visualizar_dato_de_matriz(id, fila, columna);
+
+        if (!sw) {
+            id_anterior = id;
+            anterior = document.getElementById(id).innerHTML;
+            sw = true;
+        } else {
+            if (document.getElementById(id).innerHTML === anterior && id !== id_anterior) {
+                document.getElementById(id_anterior).innerHTML = '';
+                document.getElementById(id).innerHTML = '';
+                document.getElementById(id).classList.add('rojo');
+                Visualizar_dato_de_matriz(id_anterior, fila, columna);
+                Visualizar_dato_de_matriz(id, fila, columna);
+                document.getElementById(id_anterior).classList.add('rojo');
+                if (Comprobar_lleno() === "si")
+                    alert("LO HAS CONSEGUIDO en " + numero_veces + " veces");
+            } else {
+                id_anterior = id;
+                anterior = document.getElementById(id).innerHTML;
+            }
+        }
+    }
+}
+
+function Comprobar_lleno() {
+    let lleno = "si";
+    document.querySelectorAll("#tablaId td").forEach(function(td) {
+        if (!td.classList.contains('rojo')) {
+            lleno = "no";
+            return false; // Salir del bucle
+        }
+    });
+    return lleno;
+}
+
+generarTabla();
+</script>
+
+</body>
+</html>

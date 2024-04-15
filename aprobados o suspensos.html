@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Funciones Java-Script</h1>
+
+<p id="nota1"></p>
+<p id="nota2"></p>
+<p id="sumanotas"></p>
+
+<script>
+function fun(nota1, nota2) {
+        return (nota1 + nota2)/2;
+    }
+    let nota1=1;
+    let nota2=1;
+
+    if(fun(nota1, nota2) >=5) {
+        document.getElementById("sumanotas").innerHTML = "aprobado";
+    }
+    else{
+        document.getElementById("sumanotas").innerHTML = "suspenso";
+    }
+</script>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Array media notas alumnos</h2>
+
+Media :<p id="media"></p>
+Aprobados :<p id="aprobados"></p>
+
+<script>
+    const tabla_notas = [7,8,2,4,4];
+    //--visualizar la media y cuantos aprobados tiene
+
+function Media(tab) {
+let suma = 0;
+for (let i = 0; i < tab.length; i++) {
+    suma = suma + tab  [i]; 
+}
+media = suma / tab.length;
+return media;
+
+}
+function cuantos_aprobados (tab) {
+    let conta = 0 ;
+    for (let i = 0; i < tab.length; i++)
+    if (tab[i] >= 5){
+        conta += 1; 
+    }
+//--Programa principal
+
+}
+resultado1 = Media (tabla_notas);
+document.getElementById("media").innerHTML = resultado1;
+resultado2 = cuantos_aprobados (tabla_notas);
+document.getElementById("aprobados").innerHTML = resultado2;
+
+
+</script>
+</body>
+</html>

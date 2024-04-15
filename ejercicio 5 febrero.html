@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,6 +11,7 @@
             text-align: center;
             margin: 20px;
         }
+      
 
         h1 {
             color: #4CAF50;
@@ -45,10 +47,10 @@
     </style>
 </head>
 <body>
-    <h1>Calculadora de Notas</h1>
+    <h1>Calculador de sueldos</h1>
 
-    <p>Ingresa las notas separadas por coma (por ejemplo, 50, 80, 30):</p>
-    <input type="text" id="notasInput" placeholder="Ingresa las notas">
+    <p>Ingresa los sueldos que ha obtenido un empleado:</p>
+    <input type="text" id="notasInput" placeholder="Ingresa los sueldos">
 
     <button onclick="calcularMediaYNotasAprobadas()">Calcular</button>
 
@@ -73,12 +75,10 @@
             // Verificar si está aprobado
             let aprobado = estaAprobado(media);
 
-            // Filtrar las notas aprobadas
-            let notasAprobadas = filtrarNotasAprobadas(notas);
-
+           
             // Mostrar los resultados
-            document.getElementById("mediaResultado").innerHTML = `La media es: ${media.toFixed(2)}`;
-            document.getElementById("aprobadoResultado").innerHTML = `Estado: ${aprobado ? 'Aprobado' : 'Suspenso'}`;
+            document.getElementById("mediaResultado").innerHTML = `La media de Luis es: ${media.toFixed(2)}`;
+            document.getElementById("aprobadoResultado").innerHTML = `Estado: ${aprobado ? 'Buen sueldo' : 'Mal sueldo'}`;
             document.getElementById("notasAprobadasResultado").innerHTML = `Notas Aprobadas: ${notasAprobadas.join(', ')}`;
         }
 
@@ -93,12 +93,12 @@
 
         // Función para verificar si está aprobado
         function estaAprobado(media) {
-            return media >= 50; // Puedes ajustar este umbral según tus criterios
+            return media >= 1600; // Puedes ajustar este umbral según tus criterios
         }
 
         // Función para filtrar las notas aprobadas
         function filtrarNotasAprobadas(notas) {
-            return notas.filter(nota => nota >= 50);
+            return notas.filter(nota => nota >= 1600);
         }
     </script>
 </body>

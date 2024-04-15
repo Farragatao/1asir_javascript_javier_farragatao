@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amigos y Edades</title>
+</head>
+<body>
+
+<script>
+
+  var amigos = [
+    { nombre: "Pepe", edad: 25 },
+    { nombre: "Gonzalo", edad: 30 },
+    { nombre: "Antonio", edad: 22 },
+   
+  ];
+
+  
+  function buscarEdad() {
+   
+    var nombreBuscado = prompt("Ingresa el nombre de un amigo:");
+
+    
+    var amigoEncontrado = amigos.find(function(amigo) {
+      return amigo.nombre.toLowerCase() === nombreBuscado.toLowerCase();
+    });
+
+   
+    if (amigoEncontrado) {
+      alert(amigoEncontrado.nombre + " tiene " + amigoEncontrado.edad + " años.");
+    } else {
+      alert("No se encontró un amigo con ese nombre.");
+    }
+  }
+
+  
+  window.onload = buscarEdad;
+</script>
+
+</body>
+</html>

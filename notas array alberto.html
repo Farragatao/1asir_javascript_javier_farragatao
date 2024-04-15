@@ -1,0 +1,32 @@
+// declarar en un array las diferentes notas de varios alumnos en forma de array bidimensional, y luego otro array que contenga los otros arrays // y visulaizar por cada alumno cuantas notas aprobadas tiene.
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contar notas aprobadas por alumno</title>
+</head>
+<body>
+
+<h2>Notas de los alumnos</h2>
+
+<script>
+const notasAlumnos = [
+    [7, 8, 5, 9], // Notas del primer alumno
+    [6, 4, 7, 8], // Notas del segundo alumno
+    [9, 9, 8, 10] // Notas del tercer alumno
+];
+
+function contarAprobadas(notas) {
+    return notas.filter(nota => nota >= 5).length;
+}
+
+notasAlumnos.forEach((notas, indice) => {
+    const aprobadas = contarAprobadas(notas);
+    document.write(`Alumno ${indice + 1}: Notas [${notas.join(', ')}], Aprobadas: ${aprobadas}<br>`);
+});
+</script>
+
+</body>
+</html>

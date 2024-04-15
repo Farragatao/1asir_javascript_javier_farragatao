@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día de la Semana</title>
+</head>
+<body>
+
+    <h1>Visualizar Día de la Semana</h1>
+
+    <script>
+        var numeroDia = prompt("Ingresa un número de día de la semana (1 a 7):");
+        
+        numeroDia = parseInt(numeroDia);
+
+        if (numeroDia >= 1 && numeroDia <= 7) {
+            var diasSemana = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"];
+
+            var nombreDia = diasSemana[numeroDia - 1];
+
+            console.log("El día correspondiente es:", nombreDia);
+
+            var resultadoElemento = document.createElement("p");
+            resultadoElemento.textContent = "El día correspondiente es: " + nombreDia;
+            document.body.appendChild(resultadoElemento);
+        } else {
+            console.log("Número de día no válido.");
+            var resultadoElemento = document.createElement("p");
+            resultadoElemento.textContent = "Número de día no válido.";
+            document.body.appendChild(resultadoElemento);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+//se evaluan una serie de preguntas y tiene varias respuestas (tipo test) y se tiene que poder marcar la correcta//
+
+//declarar en json los nombres de preguntas y los nombres correspondientes//
+
+//la pregunta seria ¿Cual es la capital de España? y las opciones serian burgon madrid y cadiz//
+
+se debe visualizazr cuantas preguntas ha acertado 0,1,2,3...
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de Preguntas</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h1>Test de Preguntas</h1>
+
+<div id="preguntas-container"></div>
+
+<button id="verificar">Enviar</button>
+<p id="resultado"></p>
+
+<script>
+var datosPreguntas = {
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es la capital de España?",
+      "opciones": ["Burgos", "Madrid", "Cádiz"],
+      "respuesta_correcta": "Madrid"
+    },
+    {
+      "pregunta": "¿Qué río atraviesa la ciudad de París?",
+      "opciones": ["Támesis", "Sena", "Danubio"],
+      "respuesta_correcta": "Sena"
+    },
+    {
+      "pregunta": "¿Cuál es el metal más abundante en la corteza terrestre?",
+      "opciones": ["Oro", "Hierro", "Plata"],
+      "respuesta_correcta": "Hierro"
+    }
+  ]
+};
+
+function cargarPreguntas() {
+  var container = $("#preguntas-container");
+
+  datosPreguntas.preguntas.forEach(function(pregunta, index) {
+    var divPregunta = $("<div>");
+    divPregunta.append("<p>" + pregunta.pregunta + "</p>");
+
+    pregunta.opciones.forEach(function(opcion) {
+      var input = $("<input>").attr({ type: "radio", name: "pregunta" + index, value: opcion });
+      var label = $("<label>").text(opcion);
+      divPregunta.append(input, label, "<br>");
+    });
+
+    container.append(divPregunta);
+  });
+}
+
+function verificarRespuestas() {
+  var numPreguntas = datosPreguntas.preguntas.length;
+  var numRespuestasCorrectas = 0;
+  var preguntasIncorrectas = [];
+
+  datosPreguntas.preguntas.forEach(function(pregunta, index) {
+    var respuestaSeleccionada = $("input[name='pregunta" + index + "']:checked").val();
+    if (respuestaSeleccionada === pregunta.respuesta_correcta) {
+      numRespuestasCorrectas++;
+    } else {
+      preguntasIncorrectas.push({ pregunta: pregunta.pregunta, respuesta_correcta: pregunta.respuesta_correcta });
+    }
+  });
+
+  var resultado = "Has acertado " + numRespuestasCorrectas + " de " + numPreguntas + " preguntas.";
+
+  if (preguntasIncorrectas.length > 0) {
+    resultado += "<br>Preguntas incorrectas:";
+    preguntasIncorrectas.forEach(function(pregunta) {
+      resultado += "<br>- " + pregunta.pregunta + ". Respuesta correcta: " + pregunta.respuesta_correcta;
+    });
+  }
+
+  $("#resultado").html(resultado);
+}
+
+$(document).ready(function() {
+  cargarPreguntas();
+  $("#verificar").click(verificarRespuestas);
+});
+</script>
+
+</body>
+</html>

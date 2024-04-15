@@ -1,0 +1,60 @@
+//se declara un array con valores numericos, positivo y negativo, se pide al usuario, un valor numerico, a continuacion se informa al usuario si el numero esta en ell array o no esta, hay un boton llamado fin y cuando pinche apareceran dos columnas en la columna de la derecha apareecen los valores negativos y en la columna de lal izquierda apareceran los positivos todos los valores que ha tecleado el ususarios.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buscar número en un array</title>
+  <script>
+    // Función para buscar un número en el array
+    function buscarNumero() {
+      var numeroBuscado = parseInt(document.getElementById('numero').value);
+      var arrayNumeros = [2, -5, 10, -3, 8, -1]; // Ejemplo de array con valores positivos y negativos
+      
+      var encontrado = arrayNumeros.includes(numeroBuscado);
+      
+      if (encontrado) {
+        alert('El número ' + numeroBuscado + ' está en el array.');
+      } else {
+        alert('El número ' + numeroBuscado + ' no está en el array.');
+      }
+    }
+
+    // Función para mostrar los números positivos y negativos
+    function mostrarNumeros() {
+      var arrayNumeros = [2, -5, 10, -3, 8, -1]; // Ejemplo de array con valores positivos y negativos
+      var positivos = [];
+      var negativos = [];
+      
+      arrayNumeros.forEach(function(numero) {
+        if (numero >= 0) {
+          positivos.push(numero);
+        } else {
+          negativos.push(numero);
+        }
+      });
+
+      // Mostrar los números positivos y negativos en las columnas correspondientes
+      document.getElementById('positivos').innerText = positivos.join(', ');
+      document.getElementById('negativos').innerText = negativos.join(', ');
+    }
+  </script>
+</head>
+<body>
+  <h1>Buscar número en un array</h1>
+  <label for="numero">Introduce un número:</label>
+  <input type="number" id="numero">
+  <button onclick="buscarNumero()">Buscar</button>
+  <button onclick="mostrarNumeros()">Fin</button>
+
+  <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+    <div style="width: 45%;">
+      <h2>Positivos:</h2>
+      <p id="positivos"></p>
+    </div>
+    <div style="width: 45%;">
+      <h2>Negativos:</h2>
+      <p id="negativos"></p>
+    </div>
+  </div>
+</body>
+</html>

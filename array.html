@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Array media notas alumnos</h2>
+
+<p id="demo"></p>
+
+<script>
+    const tabla_notas = [7,8,2,4,4];
+    //--Guardar en un array las notas de un alumno y visualizar su media
+
+function Media(tab) {
+let suma = 0;
+for (let i = 0; i < tab.length; i++){
+    suma = suma + tab  [i];
+}
+media = suma / tab.length;
+return media;
+}
+//--Programa principal
+result = Media (tabla_notas);
+document.getElementById("demo").innerHTML = result;
+
+
+
+
+</script>
+</body>
+</html>

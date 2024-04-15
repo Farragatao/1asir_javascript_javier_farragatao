@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea clase</title>
+</head>
+<body>
+    <script>
+        var nombresAmigos = ["Juan", "Alberto", "Santi"];
+        var edadesAmigos = [22, 45, 19];
+
+        function obtenerEdad(nombre) {
+            var indice = nombresAmigos.indexOf(nombre);
+
+            if (indice !== -1) {
+                var edad = edadesAmigos[indice];
+                return "La edad de " + nombre + " es " + edad + "años.";
+            } else {
+                return nombre + " no es tu amigo";
+            }
+        }
+
+        var nombreBuscado = prompt("Introduce el nombre de tu amigo:");
+        var resultado = obtenerEdad(nombreBuscado);
+        alert(resultado);
+    </script>
+</body>
+</html>

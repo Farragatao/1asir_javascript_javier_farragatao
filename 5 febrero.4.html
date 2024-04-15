@@ -1,0 +1,39 @@
+// guardar en un array los sueldos de varios empleados pero sin nombres, entonces quiero obtener un array que almacene las medias de cada uno de los empleados
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Sueldos</title>
+</head>
+<body>
+    <script>
+        function calcularMediaSueldos(sueldos) {
+            let suma = 0;
+
+            // Sumar los sueldos
+            for (let i = 0; i < sueldos.length; i++) {
+                suma += parseFloat(sueldos[i]);
+            }
+
+            // Calcular la media
+            const media = suma / sueldos.length;
+
+            // Mostrar la media en un mensaje de alerta
+            alert("La media de los sueldos es: " + media.toFixed(2));
+        }
+
+        // Ejemplos de sueldos para diferentes personas
+        const sueldosPorPersona = [
+            [1000, 2500, 800, 3000],
+            [1500, 2000, 1800, 2200],
+            [1200, 2800, 1500, 3200]
+        ];
+
+        // Calcular y mostrar la media para cada conjunto de sueldos
+        for (let i = 0; i < sueldosPorPersona.length; i++) {
+            calcularMediaSueldos(sueldosPorPersona[i]);
+        }
+    </script>
+</body>
+</html>
